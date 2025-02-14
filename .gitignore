@@ -1,0 +1,6 @@
+﻿bin
+obj
+appsettings.json
+appsettings.*.json
+config
+.idea
