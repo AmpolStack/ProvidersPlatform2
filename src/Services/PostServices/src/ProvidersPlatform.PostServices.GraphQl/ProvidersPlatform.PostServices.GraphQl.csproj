@@ -10,4 +10,8 @@
         <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.2"/>
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\..\..\..\Shared\src\ProvidersPlatform.Shared.Setup\ProvidersPlatform.Shared.Setup.csproj" />
+    </ItemGroup>
+
 </Project>

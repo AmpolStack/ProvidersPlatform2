@@ -14,4 +14,8 @@
       <Folder Include="Controllers\" />
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\..\..\..\Shared\src\ProvidersPlatform.Shared.Setup\ProvidersPlatform.Shared.Setup.csproj" />
+    </ItemGroup>
+
 </Project>

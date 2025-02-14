@@ -1,32 +1,18 @@
+using ProvidersPlatform.Shared.Setup;
+
 namespace ProvidersPlatform.UserServices.Rest;
 
 public class Program
 {
     public static void Main(string[] args)
     {
-        var builder = WebApplication.CreateBuilder(args);
-
-        // Add services to the container.
-
-        builder.Services.AddControllers();
-        // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
-        builder.Services.AddOpenApi();
-
-        var app = builder.Build();
-
-        // Configure the HTTP request pipeline.
-        if (app.Environment.IsDevelopment())
+        var app = DefaultApiProject.GenerateWebApplicationTemplate(opt =>
         {
-            app.MapOpenApi();
-        }
-
-        app.UseHttpsRedirection();
-
-        app.UseAuthorization();
-
-
+            opt.Services.AddControllers();
+        });
+        
         app.MapControllers();
-
-        app.Run();
+        app.MapGet("/healthy", ()=> "Rest Api User Healthy");
+        DefaultApiProject.RunApplication(app);
     }
 }
