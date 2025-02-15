@@ -13,11 +13,15 @@ public class Program
     {
         var app = DefaultApiProject.GenerateWebApplicationTemplate(opt =>
         {
+            //Inject Regular Services
             opt.Services.AddControllers();
             
+            //Inject Custom Services
+            opt.Services.AddTransient(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+                
+            //Inject Databases
             var mariaDbConfig = new MariaDbConfig();
             opt.Configuration.GetSection("Databases:Providers_Platform").Bind(mariaDbConfig);
-            
             opt.Services.AddProvidersPlatformDatabase(mariaDbConfig);
             
         });
