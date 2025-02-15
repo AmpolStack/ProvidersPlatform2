@@ -10,6 +10,14 @@
     </ItemGroup>
     <ItemGroup>
         <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.2" PrivateAssets="all" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.2">
+          <PrivateAssets>all</PrivateAssets>
+          <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="8.0.2" />
+    </ItemGroup>
+    <ItemGroup>
+      <ProjectReference Include="..\ProvidersPlatform.Shared.Models\ProvidersPlatform.Shared.Models.csproj" />
     </ItemGroup>
 
 </Project>

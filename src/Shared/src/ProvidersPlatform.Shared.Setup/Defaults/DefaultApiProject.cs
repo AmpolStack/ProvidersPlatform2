@@ -1,8 +1,11 @@
 ﻿using Microsoft.AspNetCore.Builder;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using ProvidersPlatform.Shared.Setup.Configs;
+using ProvidersPlatform.Shared.Setup.Contexts;
 
-namespace ProvidersPlatform.Shared.Setup;
+namespace ProvidersPlatform.Shared.Setup.Defaults;
 
 public static class DefaultApiProject
 {
@@ -29,4 +32,11 @@ public static class DefaultApiProject
         app.Run();
     }
 
+    public static void AddProvidersPlatformDatabase(this IServiceCollection service, MariaDbConfig config)
+    {
+        service.AddDbContext<ProvidersPlatformContext>(opt =>
+        {
+            opt.UseMySql(config.GetConnectionString(), new MariaDbServerVersion(config.ServerVersion));
+        });
+    }
 }

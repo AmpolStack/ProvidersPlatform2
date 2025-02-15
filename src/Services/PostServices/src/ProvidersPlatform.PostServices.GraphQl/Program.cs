@@ -1,4 +1,5 @@
 using ProvidersPlatform.Shared.Setup;
+using ProvidersPlatform.Shared.Setup.Defaults;
 
 namespace ProvidersPlatform.PostServices.GraphQl;
 
