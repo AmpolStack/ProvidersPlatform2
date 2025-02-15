@@ -1,5 +1,6 @@
 ﻿using System.Linq.Expressions;
 using Microsoft.EntityFrameworkCore;
+using ProvidersPlatform.Shared.Models;
 using ProvidersPlatform.Shared.Setup.Contexts;
 
 namespace ProvidersPlatform.Shared.Setup.Defaults;
@@ -18,10 +19,10 @@ public class GenericRepository<T> : IGenericRepository<T> where T : class
         var query = await _context.Set<T>().FirstOrDefaultAsync(predicate, cancellationToken);
         return query;
     }
-
+    
     public Task<IQueryable<T>> GetEntities(Expression<Func<T, bool>>? predicate = null)
     {
-        var query = (predicate is null) ? _context.Set<T>() : _context.Set<T>().Where(predicate);
+        var query = (predicate is null) ? _context.Set<T>() : _context.Set<T>().Where(predicate).AsQueryable();
         return Task.FromResult(query);
     }
 
