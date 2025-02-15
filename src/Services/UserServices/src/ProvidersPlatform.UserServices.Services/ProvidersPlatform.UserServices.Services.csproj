@@ -6,4 +6,8 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\..\..\..\Shared\src\ProvidersPlatform.Shared.Setup\ProvidersPlatform.Shared.Setup.csproj" />
+    </ItemGroup>
+
 </Project>
