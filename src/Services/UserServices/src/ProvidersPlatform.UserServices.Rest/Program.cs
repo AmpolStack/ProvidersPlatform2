@@ -1,5 +1,8 @@
+using Grpc.Core;
+using Grpc.Net.Client.Configuration;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using ProvidersPlatform.EmailServices.Grpc;
 using ProvidersPlatform.Shared.Models;
 using ProvidersPlatform.Shared.Setup.Configs;
 using ProvidersPlatform.Shared.Setup.Contexts;
@@ -28,6 +31,35 @@ public class Program
             var mariaDbConfig = new MariaDbConfig();
             opt.Configuration.GetSection("Databases:Providers_Platform").Bind(mariaDbConfig);
             opt.Services.AddProvidersPlatformDatabase(mariaDbConfig);
+            
+            //Inject Grpc Clients
+            opt.Services.AddGrpcClient<MailOperations.MailOperationsClient>(conf =>
+            {
+                var https = opt.Configuration["GrpcServer:https"];
+                conf.Address = new Uri(https!);
+            }).ConfigureChannel(conf =>
+            {
+                //Configuration to Service Config
+                conf.ServiceConfig = new ServiceConfig()
+                {
+                    //Method configs
+                    MethodConfigs =
+                    {
+                        new MethodConfig()
+                        {
+                            Names = { MethodName.Default },
+                            RetryPolicy = new RetryPolicy()
+                            {
+                                MaxAttempts = 3,
+                                BackoffMultiplier = 1.2,
+                                InitialBackoff = TimeSpan.FromSeconds(1),
+                                MaxBackoff = TimeSpan.FromSeconds(5),
+                                RetryableStatusCodes = { StatusCode.Unavailable }
+                            }
+                        }
+                    }
+                };
+            });
             
         });
         

@@ -8,12 +8,23 @@
 
     <ItemGroup>
         <PackageReference Include="AutoMapper" Version="14.0.0" />
+        <PackageReference Include="Google.Protobuf" Version="3.29.3" />
+        <PackageReference Include="Grpc.AspNetCore" Version="2.67.0" />
+        <PackageReference Include="Grpc.Net.Client" Version="2.67.0" />
+        <PackageReference Include="Grpc.Tools" Version="2.69.0">
+          <PrivateAssets>all</PrivateAssets>
+          <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
         <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.2"/>
     </ItemGroup>
 
     <ItemGroup>
       <ProjectReference Include="..\..\..\..\Shared\src\ProvidersPlatform.Shared.Setup\ProvidersPlatform.Shared.Setup.csproj" />
       <ProjectReference Include="..\ProvidersPlatform.UserServices.Services\ProvidersPlatform.UserServices.Services.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Protobuf Include="Protos\EmailSender.proto" GrpcServices="Client"/>
     </ItemGroup>
 
 </Project>
