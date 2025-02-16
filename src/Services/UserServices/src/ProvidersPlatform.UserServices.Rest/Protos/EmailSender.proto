@@ -1,0 +1,22 @@
+﻿syntax = "proto3";
+
+option csharp_namespace = "ProvidersPlatform.EmailServices.Grpc";
+
+package MailSender;
+
+service MailOperations{
+  rpc SendMail (MailRequest) returns (MailReply);
+}
+
+message MailRequest{
+  string AliasTo = 1;
+  string To = 2;
+  string password = 3;
+  string body = 4;
+  string subject = 5;
+}
+
+message MailReply{
+  bool Success = 1;
+  string Error = 2;
+}
