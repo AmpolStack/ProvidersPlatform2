@@ -22,6 +22,11 @@ public class UserController : ControllerBase
         _operationsClient = operationsClient;
     }
 
+    [HttpPost("Test")]
+    public Task<ActionResult<bool>> TestAsync([FromBody] Thing thing)
+    {
+        return Task.FromResult<ActionResult<bool>>(Ok("test"));
+    }
     [HttpGet("GetUserById")]
     public async Task<IActionResult> GetUserByIdAsync([FromQuery] int userId, CancellationToken cancellationToken)
     {
@@ -103,3 +108,4 @@ public class UserController : ControllerBase
     
 }
 
+public record Thing(string Name, string Email);

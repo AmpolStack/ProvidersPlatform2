@@ -1,0 +1,18 @@
+﻿{
+  "Routes": [
+    {
+      "DownstreamPathTemplate": "/User/{everything}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [{
+        "Host": "localhost",
+        "Port": 7105
+      }
+      ],
+      "UpstreamPathTemplate": "/User/{everything}",
+      "UpstreamHttpMethod": ["GET", "POST", "PUT", "DELETE"]
+    }
+  ],
+  "GlobalConfiguration" : {
+    "BaseUrl" : "https://localhost:7021"
+  }
+}

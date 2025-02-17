@@ -32,7 +32,7 @@ public class Program
             //Injection to Graph Queries
             opt.Services.AddSingleton<RootQuery>();
             
-            //Inject to GrapgMutations
+            //Inject to GraphMutations
             opt.Services.AddSingleton<RootMutations>();
         });
 

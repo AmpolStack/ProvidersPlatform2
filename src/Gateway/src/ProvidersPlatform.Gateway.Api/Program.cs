@@ -1,3 +1,5 @@
+using Ocelot.DependencyInjection;
+using Ocelot.Middleware;
 using ProvidersPlatform.Shared.Setup;
 using ProvidersPlatform.Shared.Setup.Defaults;
 
@@ -9,10 +11,14 @@ public class Program
     {
         var app = DefaultApiProject.GenerateWebApplicationTemplate(opt =>
         {
-            opt.Services.AddControllers();
+            opt.Configuration.AddJsonFile("ocelot.json", optional: false, reloadOnChange: true);
+
+            opt.Services.AddOcelot();
+            
         });
 
-        app.MapControllers();
+
+        app.UseOcelot();
         app.MapGet("/healthy", () => "Api Gateway Healthy");
 
         DefaultApiProject.RunApplication(app);

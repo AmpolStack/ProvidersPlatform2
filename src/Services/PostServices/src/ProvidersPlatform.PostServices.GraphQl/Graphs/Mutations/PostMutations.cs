@@ -65,6 +65,17 @@ public sealed class PostMutations : ObjectGraphType
                 return userFind;
             });
 
+        
+        Field<PostGraphType>("CreatePost")
+            .Argument<NonNullGraphType<InputNewPostGraphType>>("obj")
+            .ResolveAsync(async ctx =>
+            {
+                var repo = ctx.RequestServices!.GetRequiredService<IGenericRepository<Post>>();
+                var obj = ctx.GetArgument<Post>("obj");
+                var response = await repo.Create(obj);
+                return response;
+            });
+        
         Field<BooleanGraphType>("DeletePost")
             .Argument<NonNullGraphType<IntGraphType>>("id")
             .ResolveAsync(async ctx =>
