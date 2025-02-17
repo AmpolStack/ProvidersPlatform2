@@ -1,7 +1,7 @@
 ﻿using GraphQL.Types;
 using ProvidersPlatform.Shared.Models;
 
-namespace ProvidersPlatform.PostServices.GraphQl.Graphs.Types;
+namespace ProvidersPlatform.PostServices.GraphQl.Graphs.ObjectTypes;
 
 public sealed class CommentaryGraphType : ObjectGraphType<Commentary>
 {

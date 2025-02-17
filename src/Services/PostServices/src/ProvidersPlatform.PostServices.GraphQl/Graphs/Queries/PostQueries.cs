@@ -1,8 +1,7 @@
-﻿using System.Dynamic;
-using GraphQL;
+﻿using GraphQL;
 using GraphQL.Types;
 using Microsoft.EntityFrameworkCore;
-using ProvidersPlatform.PostServices.GraphQl.Graphs.Types;
+using ProvidersPlatform.PostServices.GraphQl.Graphs.ObjectTypes;
 using ProvidersPlatform.Shared.Models;
 using ProvidersPlatform.Shared.Setup.Defaults;
 

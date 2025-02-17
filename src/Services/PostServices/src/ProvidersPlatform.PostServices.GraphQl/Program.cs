@@ -30,8 +30,10 @@ public class Program
             });
             
             //Injection to Graph Queries
-            opt.Services.AddSingleton<PostQueries>();
             opt.Services.AddSingleton<RootQuery>();
+            
+            //Inject to GrapgMutations
+            opt.Services.AddSingleton<RootMutations>();
         });
 
         app.UseAuthorization();
