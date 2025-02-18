@@ -18,7 +18,7 @@ public class Program
         });
 
 
-        app.UseOcelot();
+        app.UseOcelot().Wait();
         app.MapGet("/healthy", () => "Api Gateway Healthy");
 
         DefaultApiProject.RunApplication(app);
