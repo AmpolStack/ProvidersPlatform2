@@ -10,6 +10,17 @@
       ],
       "UpstreamPathTemplate": "/User/{everything}",
       "UpstreamHttpMethod": ["GET", "POST", "PUT", "DELETE"]
+    },
+    {
+      "DownstreamPathTemplate": "/graphql",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [{
+        "Host": "localhost",
+        "Port": 7249
+      }
+      ],
+      "UpstreamPathTemplate": "/graph",
+      "UpstreamHttpMethod": ["POST"]
     }
   ],
   "GlobalConfiguration" : {
