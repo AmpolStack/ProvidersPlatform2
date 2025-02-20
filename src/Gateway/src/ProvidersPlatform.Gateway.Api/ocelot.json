@@ -1,6 +1,25 @@
 ﻿{
   "Routes": [
     {
+      "DownstreamPathTemplate": "/User/Secure/{everything}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [{
+        "Host": "localhost",
+        "Port": 7105
+      }
+      ],
+      "UpstreamPathTemplate": "/User/Secure/{everything}",
+      "UpstreamHttpMethod": ["GET", "POST", "PUT", "DELETE"],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
+      "AddQueriesToRequest" : {
+        "userId" : "Claims[http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier] > value"
+      },
+      "Priority": 1
+    },
+    {
       "DownstreamPathTemplate": "/User/{everything}",
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [{
@@ -10,6 +29,17 @@
       ],
       "UpstreamPathTemplate": "/User/{everything}",
       "UpstreamHttpMethod": ["GET", "POST", "PUT", "DELETE"]
+    },
+    {
+      "DownstreamPathTemplate": "/Auth/{everything}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [{
+        "Host": "localhost",
+        "Port": 7105
+      }
+      ],
+      "UpstreamPathTemplate": "/Auth/{everything}",
+      "UpstreamHttpMethod": ["POST"]
     },
     {
       "DownstreamPathTemplate": "/graphql",

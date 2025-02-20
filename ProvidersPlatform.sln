@@ -4,8 +4,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Gateway", "Gateway", "{1AC5
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProvidersPlatform.Gateway.Api", "src\Gateway\src\ProvidersPlatform.Gateway.Api\ProvidersPlatform.Gateway.Api.csproj", "{4E57D49C-9A27-42E9-A7F4-9E13A51E9642}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProvidersPlatform.Gateway.Data", "src\Gateway\src\ProvidersPlatform.Gateway.Data\ProvidersPlatform.Gateway.Data.csproj", "{EB02A77F-2D15-480A-B4E4-813EB79D2CAD}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProvidersPlatform.Gateway.Services", "src\Gateway\src\ProvidersPlatform.Gateway.Services\ProvidersPlatform.Gateway.Services.csproj", "{067B2958-F3C9-45A7-B859-7C6B2A9C5E80}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{E8C7EB3E-1627-4AC5-AAEE-299EA024463A}"
@@ -54,6 +52,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProvidersPlatform.Integrati
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProvidersPlatform.UserServices.Rest", "src\Services\UserServices\src\ProvidersPlatform.UserServices.Rest\ProvidersPlatform.UserServices.Rest.csproj", "{89F2B788-A6CB-4D44-89E7-6F56628BA5DA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProvidersPlatform.Shared.Authentication", "src\Shared\src\ProvidersPlatform.Shared.Authentication\ProvidersPlatform.Shared.Authentication.csproj", "{0772600B-1B1A-4530-B070-4FAF5337217D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -64,10 +64,6 @@ Global
 		{4E57D49C-9A27-42E9-A7F4-9E13A51E9642}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4E57D49C-9A27-42E9-A7F4-9E13A51E9642}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4E57D49C-9A27-42E9-A7F4-9E13A51E9642}.Release|Any CPU.Build.0 = Release|Any CPU
-		{EB02A77F-2D15-480A-B4E4-813EB79D2CAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EB02A77F-2D15-480A-B4E4-813EB79D2CAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EB02A77F-2D15-480A-B4E4-813EB79D2CAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EB02A77F-2D15-480A-B4E4-813EB79D2CAD}.Release|Any CPU.Build.0 = Release|Any CPU
 		{067B2958-F3C9-45A7-B859-7C6B2A9C5E80}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{067B2958-F3C9-45A7-B859-7C6B2A9C5E80}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{067B2958-F3C9-45A7-B859-7C6B2A9C5E80}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -124,10 +120,13 @@ Global
 		{89F2B788-A6CB-4D44-89E7-6F56628BA5DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{89F2B788-A6CB-4D44-89E7-6F56628BA5DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{89F2B788-A6CB-4D44-89E7-6F56628BA5DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0772600B-1B1A-4530-B070-4FAF5337217D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0772600B-1B1A-4530-B070-4FAF5337217D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0772600B-1B1A-4530-B070-4FAF5337217D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0772600B-1B1A-4530-B070-4FAF5337217D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{4E57D49C-9A27-42E9-A7F4-9E13A51E9642} = {1AC54365-0041-4C68-85F0-9903F67851FF}
-		{EB02A77F-2D15-480A-B4E4-813EB79D2CAD} = {1AC54365-0041-4C68-85F0-9903F67851FF}
 		{067B2958-F3C9-45A7-B859-7C6B2A9C5E80} = {1AC54365-0041-4C68-85F0-9903F67851FF}
 		{E8C7EB3E-1627-4AC5-AAEE-299EA024463A} = {1AC54365-0041-4C68-85F0-9903F67851FF}
 		{7D5E31C7-E126-442D-BC6B-516E3F6190EF} = {41462F3D-B287-486E-904A-16160F9D1D65}
@@ -149,5 +148,6 @@ Global
 		{C15E4FEF-46AD-42AB-B8CF-C5EAF18989B3} = {AF11E012-4185-4142-B5AC-0FC428FD05FB}
 		{33F28D1C-5CFC-4F84-9113-0F39CD2B05C8} = {50217D3D-79F7-4979-9659-AE286333A586}
 		{89F2B788-A6CB-4D44-89E7-6F56628BA5DA} = {7D5E31C7-E126-442D-BC6B-516E3F6190EF}
+		{0772600B-1B1A-4530-B070-4FAF5337217D} = {AF11E012-4185-4142-B5AC-0FC428FD05FB}
 	EndGlobalSection
 EndGlobal

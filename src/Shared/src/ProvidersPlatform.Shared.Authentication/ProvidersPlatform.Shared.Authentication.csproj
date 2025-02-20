@@ -10,13 +10,4 @@
       <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="9.0.2" />
     </ItemGroup>
 
-    <ItemGroup>
-      <ProjectReference Include="..\..\..\Shared\src\ProvidersPlatform.Shared.Models\ProvidersPlatform.Shared.Models.csproj" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <Folder Include="Definitions\" />
-      <Folder Include="Implementations\" />
-    </ItemGroup>
-
 </Project>

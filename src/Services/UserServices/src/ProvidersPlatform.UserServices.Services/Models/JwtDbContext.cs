@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 
-namespace ProvidersPlatform.Gateway.Data.Models;
+namespace ProvidersPlatform.UserServices.Services.Models;
 
 public partial class JwtDbContext : DbContext
 {
@@ -17,10 +15,7 @@ public partial class JwtDbContext : DbContext
 
     public virtual DbSet<RefreshTokenHistory> RefreshTokenHistories { get; set; }
 
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseSqlServer("Server=Me1097;Database=JwtDB;Trusted_Connection=true;TrustServerCertificate=true;");
-
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder){}
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<RefreshTokenHistory>(entity =>

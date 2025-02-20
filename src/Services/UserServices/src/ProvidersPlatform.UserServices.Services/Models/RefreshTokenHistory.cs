@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace ProvidersPlatform.Gateway.Data.Models;
+﻿namespace ProvidersPlatform.UserServices.Services.Models;
 
 public partial class RefreshTokenHistory
 {

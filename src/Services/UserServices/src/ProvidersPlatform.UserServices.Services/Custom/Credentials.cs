@@ -1,4 +1,4 @@
-﻿namespace ProvidersPlatform.Gateway.Services.Custom;
+﻿namespace ProvidersPlatform.UserServices.Services.Custom;
 
 public class Credentials
 {

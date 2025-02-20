@@ -12,11 +12,9 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Controllers\" />
-    </ItemGroup>
-
-    <ItemGroup>
+      <ProjectReference Include="..\..\..\Shared\src\ProvidersPlatform.Shared.Authentication\ProvidersPlatform.Shared.Authentication.csproj" />
       <ProjectReference Include="..\..\..\Shared\src\ProvidersPlatform.Shared.Setup\ProvidersPlatform.Shared.Setup.csproj" />
+      <ProjectReference Include="..\ProvidersPlatform.Gateway.Services\ProvidersPlatform.Gateway.Services.csproj" />
     </ItemGroup>
 
 </Project>

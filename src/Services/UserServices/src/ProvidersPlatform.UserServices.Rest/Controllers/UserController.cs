@@ -27,7 +27,7 @@ public class UserController : ControllerBase
     {
         return Task.FromResult<ActionResult<bool>>(Ok("test"));
     }
-    [HttpGet("GetUserById")]
+    [HttpGet("Secure/GetUserById")]
     public async Task<IActionResult> GetUserByIdAsync([FromQuery] int userId, CancellationToken cancellationToken)
     {
         var user = await _userRepository.GetUserByIdAsync(userId, cancellationToken);
