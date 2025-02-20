@@ -30,6 +30,7 @@ public class UserController : ControllerBase
     [HttpGet("Secure/GetUserById")]
     public async Task<IActionResult> GetUserByIdAsync([FromQuery] int userId, CancellationToken cancellationToken)
     {
+        var header = HttpContext.Request.Headers["Lamp"];
         var user = await _userRepository.GetUserByIdAsync(userId, cancellationToken);
         if (user == null)
         {

@@ -53,6 +53,7 @@ public class JwtAuthentication : IJwtAuthentication
         var claims = new Claim[]
         {
             new Claim(ClaimTypes.Email, user.Email),
+            new Claim("temp", "1|2"),
             new Claim(ClaimTypes.NameIdentifier, user.UserId.ToString())
         };
 

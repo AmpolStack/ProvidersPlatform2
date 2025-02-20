@@ -14,8 +14,14 @@
         "AuthenticationProviderKey": "Bearer",
         "AllowedScopes": []
       },
+      "AddClaimsToRequest" : {
+        "UserId" : "Claims[http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier] > value"
+      },
       "AddQueriesToRequest" : {
-        "userId" : "Claims[http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier] > value"
+        "userId" :  "Claims[UserId] > value"
+      },
+      "AddHeadersToRequest" : {
+        "Lamp" : "Claims[UserId] > value"
       },
       "Priority": 1
     },
